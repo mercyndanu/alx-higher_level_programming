@@ -11,9 +11,9 @@ SELECT DISTINCT `name`
              (SELECT `name`
                 FROM `tv_genres` AS g
 	             INNER JOIN `tv_show_genres` AS s
-		     ON genre.`id` = s.`genre_id`
+		     ON g.`id` = s.`genre_id`
 
 		     INNER JOIN `tv_shows` AS t
 		     ON s.`show_id` = t.`id`
-		     WHERE tv.`title` = "Dexter")
- ORDER BY genre.`name`;
+		     WHERE t.`title` = "Dexter")
+ ORDER BY g.`name`;
